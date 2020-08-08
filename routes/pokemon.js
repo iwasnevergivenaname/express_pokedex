@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const axios = require("axios");
 
 const db = require("../models");
 
@@ -11,9 +12,9 @@ router.get('/', async (req, res) => {
   //   console.log('Created: ', poke.name)
   // })
 
- const pokemons = await db.pokemon.findAll()
-    // .then(function(poke) {
-    // console.log('Found: ', poke.name)
+  const pokemons = await db.pokemon.findAll();
+  // .then(function(poke) {
+  // console.log('Found: ', poke.name)
   // })
 
 
@@ -24,16 +25,23 @@ router.get('/', async (req, res) => {
 });
 
 
-
 // POST /pokemon - receive the name of a pokemon and add it to the database
 router.post('/', async (req, res) => {
   // TODO: Get form data and add a new record to DB
   const {body} = req;
-  const insert = await db.pokemon.create({
-    name: body.name
-  });
-  console.log(insert);
-  res.send(req.body);
+  const {url, name} = body;
+  const {data: pokeData} = await axios.get(url);
+  console.log(pokeData);
+  // const insert = await db.pokemon.create({
+  //   name: body.name
+  // });
+  // console.log(insert);
+  if (name.toLowerCase() === "charmander") {
+   const {data: formData} = await axios.get(pokeData.forms[0].url);
+    res.send(formData);
+  } else {
+    res.send(pokeData);
+  }
 });
 
 module.exports = router;
