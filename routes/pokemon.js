@@ -20,7 +20,9 @@ router.get('/', async (req, res) => {
 
   // TODO: Get all records from the DB and render to view
   res.send(pokemons.map(p => {
-    return {name: p.name};
+    // render page that shows fields
+    res.render()
+    // return {name: p.name};
   }));
 });
 
@@ -32,6 +34,8 @@ router.post('/', async (req, res) => {
   const {url, name} = body;
   const {data: pokeData} = await axios.get(url);
   console.log(pokeData);
+
+  const p = await db.sequelize.query(`INSERT INTO pokedex (name, order) VALUES ("${pokeData.name}", ${pokeData.order})`);
   // const insert = await db.pokemon.create({
   //   name: body.name
   // });
