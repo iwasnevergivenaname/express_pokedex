@@ -6,11 +6,18 @@
 
 <% pokemons.forEach(pokemon => { %>
     <div class="well"
-         style="background-color: #FFCB05;
-        box-shadow: #9c7d00;
-        border: #9c7d00 1px solid;
+         style="background-image: url('https://i.imgur.com/P4V3fHR.png');
+         background-position-x: center;
+         justify-items: center;
+         background-size: 60%;
+         background-repeat: no-repeat;
+         background-color: #3D7DCA;
+         height: 200px;
+        box-shadow: #3D7DCA;
+        border: #3D7DCA 1px solid;
         margin: 5px auto">
-        <a href="/pokemon/<%= pokemon.name %>" style="color:#000063;"><h2><%= pokemon.name %></h2></a>
+        <a href="/pokemon/<%= pokemon.name %>" style="color:#7bb7ff;
+            text-shadow: 1px 1px 1px #0000ba;"><h3><%= pokemon.name %></h3></a>
 
     </div>
 <% }); %>

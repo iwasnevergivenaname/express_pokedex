@@ -22,7 +22,6 @@ router.post('/', async (req, res) => {
   const {data: pokeData} = await axios.get(url);
   console.log(pokeData);
 
-  // const p = await db.sequelize.query(`INSERT INTO pokedex (name, order) VALUES ("${pokeData.name}", ${pokeData.order})`);
   // add find or create with conditional logic
   const insert = await db.pokemon.create({
     name: body.name
