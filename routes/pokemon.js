@@ -23,6 +23,7 @@ router.post('/', async (req, res) => {
   console.log(pokeData);
 
   // const p = await db.sequelize.query(`INSERT INTO pokedex (name, order) VALUES ("${pokeData.name}", ${pokeData.order})`);
+  // add find or create with conditional logic
   const insert = await db.pokemon.create({
     name: body.name
   });
@@ -33,10 +34,11 @@ router.post('/', async (req, res) => {
 router.get("/:name", (req, res) => {
   // data object
   const poke = req.params.name;
-  axios.get(poke)
+  const URL = `http://pokeapi.co/api/v2/pokemon/${poke}`;
+  axios.get(URL)
     .then(response => {
       console.log(response.data);
-      let pokemon = response.data.results;
+      let pokemon = response.data;
       res.render('details', {pokemon: pokemon});
     });
 });
