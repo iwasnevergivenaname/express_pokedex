@@ -1,16 +1,16 @@
 body {
-  background-color: #FFCB05;
+  background-color: #3D7DCA;
   flex-direction: column;
 }
 
 .well {
   margin: 10px auto;
   text-align: center;
-  background-color: #3D7DCA;
-  box-shadow: #003A70 2px 2px 5px;
+  background-color: #FFCB05;
+  box-shadow: #9c7d00 2px 2px 5px;
   width: 300px;
 }
 
 .btn-primary {
-  background-color: mediumblue;
+  background-color: #0000ba;
 }

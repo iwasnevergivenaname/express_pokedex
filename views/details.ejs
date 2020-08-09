@@ -1,12 +1,22 @@
+<link rel="stylesheet" href="./public/css/style.css">
+<body style="background-color:#3D7DCA;">
 
-<div class="card" style="width: 18rem;">
-    <img src="<%= pokemon.sprites.front_default %>" class="card-img-top" alt="front sprite default">
-    <div class="card-body">
-        <h5 class="card-title"><%= pokemon.name %></h5>
+<div class="card" style="width: 60rem;
+    margin: 60px auto;
+    border-radius: 5%;
+    background-color: #FFCB05">
+    <img src="<%= pokemon.sprites.front_default %>" class="card-img-top" alt="front sprite default"
+         style="border: solid 10px #9c7d00;
+         border-radius: 5%;
+         padding: 0;
+        margin: 0;">
+    <div class="card-body" style="text-align: center;">
+        <h3 class="card-title"><%= pokemon.name %></h3>
         <p class="card-text">height: <%= pokemon.height %><br>
-        base experience: <%= pokemon.base_experience %></p>
+            base experience: <%= pokemon.base_experience %></p>
 
     </div>
 </div>
+</body>
 
 <!-- maybe add delete button-->
