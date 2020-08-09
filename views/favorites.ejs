@@ -1,13 +1,17 @@
-<link rel="stylesheet" href="./public/css/style.css">
 <body style="background-color:#3D7DCA;">
-<%  pokemons.forEach(pokemon => {  %>
-    <div class="well" style="background-color: #FFCB05;
-    box-shadow: #9c7d00;
-    margin: 10rem auto">
-        <h2><%= pokemon.name %></h2>
-            <a href="/pokemon/<%= pokemon.name %>" style="color:#0000ba;"><%= pokemon.name %></a>
-<!--        want to display details for individual pokes -->
-<!--            <button class="btn btn-primary" type="submit">Add to Favorite Pokemon</button>-->
+
+<div style="text-align: center">
+    <a href="/" style="color:black;">see all pokemon</a>
+</div>
+
+<% pokemons.forEach(pokemon => { %>
+    <div class="well"
+         style="background-color: #FFCB05;
+        box-shadow: #9c7d00;
+        border: #9c7d00 1px solid;
+        margin: 5px auto">
+        <a href="/pokemon/<%= pokemon.name %>" style="color:#000063;"><h2><%= pokemon.name %></h2></a>
+
     </div>
 <% }); %>
 </body>

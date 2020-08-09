@@ -1,6 +1,23 @@
+@font-face {
+  font-family: 'pokemon_hollownormal';
+  src: url('pokemon_hollow-webfont.woff2') format('woff2'),
+  url('pokemon_hollow-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#headline {
+  font-family: 'pokemon_hollownormal', sans-serif;
+}
+
 body {
   background-color: #3D7DCA;
   flex-direction: column;
+  font-family: ;
+}
+
+a {
+  color: black;
 }
 
 .well {
