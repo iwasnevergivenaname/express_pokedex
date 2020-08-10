@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const axios = require("axios");
-
 const db = require("../models");
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', async (req, res) => {
-
   const pokemons = await db.pokemon.findAll();
 
   // TODO: Get all records from the DB and render to view
@@ -48,7 +46,7 @@ router.get("/:name", (req, res) => {
     });
 });
 
-router.delete("/",async  (req, res) => {
+router.delete("/", async  (req, res) => {
   try {
     await db.pokemon.destroy({
       where: {
