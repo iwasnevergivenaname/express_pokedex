@@ -22,12 +22,18 @@ router.post('/', async (req, res) => {
   const {data: pokeData} = await axios.get(url);
   console.log(pokeData);
 
-  // add find or create with conditional logic
-  const insert = await db.pokemon.create({
-    name: body.name
-  });
-  console.log(insert);
-  res.redirect("/pokemon");
+  try {
+    // add find or create with conditional logic
+    const insert = await db.pokemon.findOrCreate({
+      where: {
+        name: req.body.name
+      }
+    });
+    console.log(insert);
+    res.redirect("/pokemon");
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get("/:name", (req, res) => {
@@ -40,6 +46,19 @@ router.get("/:name", (req, res) => {
       let pokemon = response.data;
       res.render('details', {pokemon: pokemon});
     });
+});
+
+router.delete("/",async  (req, res) => {
+  try {
+    await db.pokemon.destroy({
+      where: {
+        name: req.body.name
+      },
+    });
+    res.redirect("/pokemon");
+  } catch(error) {
+    res.render(error);
+  }
 });
 
 module.exports = router;
