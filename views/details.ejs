@@ -1,4 +1,3 @@
-
 <body style="background-image: url('https://i.pinimg.com/originals/ca/e0/1a/cae01ab5cce960db0d7819cc96e97ce8.png');
 background-size: 100%;
 background-repeat: no-repeat;">
@@ -11,24 +10,28 @@ background-repeat: no-repeat;">
 </div>
 
 
-
 <div class="card" style="width: 60rem;
     margin: 5% auto;
     border-radius: 5%;
-    background-color: #FFCB05">
+    background-color: #FFCB05;
+    border: solid 10px #c69f03;">
+    <h3 class="card-title" style="text-align: center;"><%= pokemon.name %></h3>
     <img src="<%= pokemon.sprites.front_default %>" class="card-img-top" alt="front sprite default"
          style="border: solid 10px #c69f03;
          background-color: #f8efcc;
+         width: 90%;
+         height: 70%;
          border-radius: 5%;
          padding: 0;
-        margin: 0;">
+        margin: 20px auto;">
     <div class="card-body" style="text-align: center;">
-        <h3 class="card-title"><%= pokemon.name %></h3>
         <p class="card-text"><strong>height: </strong><%= pokemon.height %><br>
-            <strong>type(s): </strong><br><% pokemon.types.forEach(p => { %>
+            <strong>type(s): </strong><br>
+            <% pokemon.types.forEach(p => { %>
                 ◦ <%= p.type.name %><br>
             <% }) %>
-            <strong>abilities: <br></strong><% pokemon.abilities.splice(0, 5).forEach(p => { %>
+            <strong>abilities: <br></strong>
+            <% pokemon.abilities.splice(0, 5).forEach(p => { %>
                 ◦ <%= p.ability.name %><br>
             <% }) %>
         </p>
