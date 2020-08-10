@@ -24,13 +24,13 @@ background-repeat: no-repeat;">
         margin: 0;">
     <div class="card-body" style="text-align: center;">
         <h3 class="card-title"><%= pokemon.name %></h3>
-        <p class="card-text">height: <%= pokemon.height %><br>
-        type: <% pokemon.types.forEach(p => { %>
-            <%= p.type.name %>
-            <% }) %><br>
-            abilities: <br><% pokemon.abilities.splice(0, 5).forEach(p => { %>
-                ◦ <%= p.ability.name %> <br>
-            <% }) %><br>
+        <p class="card-text"><strong>height: </strong><%= pokemon.height %><br>
+            <strong>type(s): </strong><br><% pokemon.types.forEach(p => { %>
+                ◦ <%= p.type.name %><br>
+            <% }) %>
+            <strong>abilities: <br></strong><% pokemon.abilities.splice(0, 5).forEach(p => { %>
+                ◦ <%= p.ability.name %><br>
+            <% }) %>
         </p>
 
     </div>

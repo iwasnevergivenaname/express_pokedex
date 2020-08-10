@@ -20,7 +20,9 @@
             text-shadow: 1px 1px 1px #0000ba;"><h3><%= pokemon.name %></h3></a>
         <form method="POST" action="/pokemon?_method=DELETE">
             <input type="hidden" name="name" value="<%= pokemon.name%>">
-            <button id="remove" class="removePoke" type="submit">leave</button>
+            <button id="remove" class="removePoke" type="submit"
+            style="margin-top: 35px;
+            font-size: 10px;">remove</button>
         </form>
 
     </div>
